@@ -21,7 +21,8 @@ package com.android.volley;
  *
  * @param <T> Parsed type of this response
  */
-public class Response<T> {
+public class Response<T>
+{
 
     /** Callback interface for delivering parsed responses. */
     public interface Listener<T> {
@@ -30,7 +31,8 @@ public class Response<T> {
     }
 
     /** Callback interface for delivering error responses. */
-    public interface ErrorListener {
+    public interface ErrorListener
+    {
         /**
          * Callback method that an error has been occurred with the
          * provided error code and optional user-readable message.
@@ -39,7 +41,8 @@ public class Response<T> {
     }
 
     /** Returns a successful response containing the parsed result. */
-    public static <T> Response<T> success(T result, Cache.Entry cacheEntry) {
+    public static <T> Response<T> success(T result, Cache.Entry cacheEntry)
+    {
         return new Response<T>(result, cacheEntry);
     }
 
@@ -71,13 +74,15 @@ public class Response<T> {
     }
 
 
-    private Response(T result, Cache.Entry cacheEntry) {
+    private Response(T result, Cache.Entry cacheEntry)
+    {
         this.result = result;
         this.cacheEntry = cacheEntry;
         this.error = null;
     }
 
-    private Response(VolleyError error) {
+    private Response(VolleyError error)
+    {
         this.result = null;
         this.cacheEntry = null;
         this.error = error;
